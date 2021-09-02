@@ -1,0 +1,22 @@
+.nav-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 45px;
+}
+
+.text {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+
+.icon {
+    color: white;
+    font-size: 26px;
+}
+
+.pt-03 {
+    padding-top: 3px;
+}
