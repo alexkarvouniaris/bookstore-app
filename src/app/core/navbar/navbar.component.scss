@@ -3,6 +3,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     height: 45px;
 }
 
@@ -19,4 +20,8 @@
 
 .pt-03 {
     padding-top: 3px;
+}
+
+.text2 {
+    color: white;
 }

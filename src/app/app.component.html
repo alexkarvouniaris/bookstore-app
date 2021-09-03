@@ -1,3 +1,13 @@
 <div>
   <app-navbar></app-navbar>
+  <button
+    routerLink="/home/add"
+    #tooltip="matTooltip"
+    matTooltip="Add a new book"
+    class="fab-position"
+    mat-fab
+    color="primary"
+  >
+    <mat-icon class="text-white"><strong>add</strong></mat-icon>
+  </button>
 </div>
