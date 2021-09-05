@@ -1,0 +1,14 @@
+<div class="content pt-2">
+    <div class="px-1">
+        <h1>Search to find your new book</h1>
+    </div>
+    <div class="px-2 text">
+        You can use keywords that are related to the title or the author of a book. Even the category and year of publication.   
+    </div>
+    <div>
+        <app-filter (changed)="filterChanged($event)"></app-filter>
+    </div>
+    <div>
+        <app-books-grid [books]="filteredBooks"></app-books-grid>
+    </div>
+</div>

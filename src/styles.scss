@@ -17,6 +17,8 @@ $bookstore-theme: mat.define-light-theme((
 
 @include mat.all-component-themes($bookstore-theme);
 
+@import "./responsive-breakpoints.scss";
+
 /* You can add global styles to this file, and also import other style files */
 body,
 html {
@@ -42,3 +44,11 @@ body {
 .text-white {
   color: white;
 }
+
+.pt-2 {
+  padding-top: 20px;
+}
+
+.px-2 {
+  padding: 0 20px 0 20px;
+} 

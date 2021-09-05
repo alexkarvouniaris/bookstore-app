@@ -1,0 +1,33 @@
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    height: 200px;
+}
+
+.card {
+    margin: 0 10px 20px 10px;
+    width: 145px;
+    height: 300px;
+}
+
+.text {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

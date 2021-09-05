@@ -1,0 +1,14 @@
+<div class="filter-content">
+  <form class="w-form">
+    <mat-form-field appearance="outline" class="w-input">
+      <mat-label>Αναζήτηση..</mat-label>
+      <input
+        name="filter"
+        matInput
+        [(ngModel)]="model.filter"
+        (keyup)="filterChanged($event)"
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </form>
+</div>

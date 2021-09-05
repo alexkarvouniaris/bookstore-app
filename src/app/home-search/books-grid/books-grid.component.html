@@ -1,0 +1,15 @@
+<div class="grid pt-2">
+    <div *ngFor="let book of books">
+        <mat-card class="card">
+            <img class="img" mat-card-image src={{book.image}}>
+            <mat-card-content class="card-content">
+                <div class="text">
+                    <strong>{{book.title}}</strong>
+                </div>
+                <div>
+                    <app-rating [rating]="book.rating" (ratingChanged)="onRatingChanged($event)"></app-rating>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
