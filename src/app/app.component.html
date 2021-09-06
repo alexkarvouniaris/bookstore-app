@@ -2,12 +2,13 @@
   <app-navbar></app-navbar>
   <router-outlet></router-outlet>
   <button
-    routerLink="/home/add"
+    routerLink="/home/book/add"
     #tooltip="matTooltip"
     matTooltip="Add a new book"
     class="fab-position"
     mat-fab
     color="primary"
+    *ngIf="router.url !== '/home/book/add'"
   >
     <mat-icon class="text-white"><strong>add</strong></mat-icon>
   </button>

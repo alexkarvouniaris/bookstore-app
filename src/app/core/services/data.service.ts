@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IBook } from 'src/app/shared/interfaces';
 
@@ -6,11 +6,16 @@ import { IBook } from 'src/app/shared/interfaces';
   providedIn: 'root'
 })
 export class DataService {
-
   constructor() { }
 
   getBooks(): Observable<IBook[]>{
     return of(books);
+  }
+
+  insertBook(book: IBook){
+    var bookObject = book;
+    localStorage.setItem('book', JSON.stringify(bookObject));
+    return of(true);
   }
 }
 

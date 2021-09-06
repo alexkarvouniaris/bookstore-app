@@ -49,6 +49,18 @@ body {
   padding-top: 20px;
 }
 
+.pr-2 {
+  padding-right: 20px;
+}
+
 .px-2 {
   padding: 0 20px 0 20px;
 } 
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  background: #ffffff;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: #ff9800;
+}

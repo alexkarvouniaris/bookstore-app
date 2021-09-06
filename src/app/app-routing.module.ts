@@ -10,6 +10,13 @@ const routes: Routes = [
         (m) => m.HomeSearchModule
       ),
   },
+  {
+    path: 'home/book/add',
+    loadChildren: () =>
+      import('./home-book-add/home-book-add.module').then(
+        (m) => m.HomeBookAddModule
+      ),
+  },
 ];
 
 @NgModule({

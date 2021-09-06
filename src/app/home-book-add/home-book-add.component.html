@@ -1,0 +1,110 @@
+<div class="form-content">
+  <div>
+    <h1>Add new Book</h1>
+  </div>
+  <div class="pt-2">
+    <mat-card>
+      <form [formGroup]="bookForm" (ngSubmit)="submit(bookForm)" novalidate>
+        <div class="wrapper">
+          <div class="info">
+            <mat-form-field appearance="outline" class="w-200">
+              <mat-label>Title</mat-label>
+              <input matInput required formControlName="title" />
+              <mat-error *ngIf="f.required">
+                Το πεδίο είναι υποχρεωτικο
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-200">
+              <mat-label>Description</mat-label>
+              <input matInput required formControlName="description" />
+              <mat-error *ngIf="f.required">
+                Το πεδίο είναι υποχρεωτικο
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-200">
+              <mat-label>Categories</mat-label>
+              <input matInput required formControlName="categories" />
+              <mat-error *ngIf="f.required">
+                Το πεδίο είναι υποχρεωτικο
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-200">
+              <mat-label>Author Name</mat-label>
+              <input matInput required formControlName="author" />
+              <mat-error *ngIf="f.required">
+                Το πεδίο είναι υποχρεωτικο
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-200">
+              <mat-label>Page Numbers</mat-label>
+              <input type="number" matInput required formControlName="pages" />
+              <mat-error *ngIf="f.required">
+                Το πεδίο είναι υποχρεωτικο
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="info">
+            <mat-form-field appearance="outline" class="w-200">
+              <mat-label>Publisher</mat-label>
+              <input matInput required formControlName="publisher" />
+              <mat-error *ngIf="f.required">
+                Το πεδίο είναι υποχρεωτικο
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-200">
+              <mat-label>Year</mat-label>
+              <input matInput required formControlName="published" />
+              <mat-error *ngIf="f.required">
+                Το πεδίο είναι υποχρεωτικο
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-200">
+              <mat-label>Rating</mat-label>
+              <mat-select formControlName="rating">
+                <mat-option [value]="1">1/5</mat-option>
+                <mat-option [value]="2">2/5</mat-option>
+                <mat-option [value]="3">3/5</mat-option>
+                <mat-option [value]="4">4/5</mat-option>
+                <mat-option [value]="5">5/5</mat-option>
+              </mat-select>
+              <mat-error *ngIf="f.required">
+                Το πεδίο είναι υποχρεωτικο
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-200">
+              <mat-label>ISBN-10</mat-label>
+              <input matInput required formControlName="isbn10" />
+              <mat-error *ngIf="f.required">
+                Το πεδίο είναι υποχρεωτικο
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-200">
+              <mat-label>ISBN-13</mat-label>
+              <input matInput required formControlName="isbn" />
+              <mat-error *ngIf="f.required">
+                Το πεδίο είναι υποχρεωτικο
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="import">
+          <!-- <button mat-fab disabled>
+            <mat-icon>attach_file</mat-icon>
+          </button> -->
+          <div>
+            <mat-form-field appearance="outline" class="w-200">
+              <mat-label>Image URL</mat-label>
+              <input matInput required formControlName="image" />
+              <mat-error *ngIf="f.required">
+                Το πεδίο είναι υποχρεωτικο
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>

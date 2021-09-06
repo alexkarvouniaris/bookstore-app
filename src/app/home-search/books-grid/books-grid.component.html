@@ -6,6 +6,7 @@
                 <div class="text">
                     <strong>{{book.title}}</strong>
                 </div>
+                <mat-divider [inset]="true"></mat-divider>
                 <div>
                     <app-rating [rating]="book.rating" (ratingChanged)="onRatingChanged($event)"></app-rating>
                 </div>
