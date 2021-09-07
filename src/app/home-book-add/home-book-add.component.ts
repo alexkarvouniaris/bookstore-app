@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { DataService } from '../core/services/data.service';
@@ -27,19 +27,36 @@ export class HomeBookAddComponent implements OnInit {
 
   buildForm() {
     this.bookForm = this.fb.group({
-      title: [''],
-      description: [''],
-      categories: [['']],
-      author: [''],
-      publisher: [''],
-      published: [''],
-      pages: [],
-      rating: [],
-      isbn: [''],
-      isbn10: [''],
-      image: [''],
+      title: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(120),
+          Validators.minLength(10),
+        ],
+      ],
+      description: ['', [Validators.required, Validators.maxLength(512), Validators.pattern('^[A-Z].*')]],
+      categories: ['', [Validators.required]],
+      author: ['', [Validators.required]],
+      publisher: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(60),
+          Validators.minLength(5),
+        ],
+      ],
+      published: [
+        '',
+        [Validators.required, Validators.pattern('^([0-9]{4})$')],
+      ],
+      pages: [[Validators.required, Validators.max(9999)]], //, Validators.pattern('\d{4}$/')]],
+      rating: [[Validators.required]],
+      isbn: ['', [Validators.required, Validators.pattern('^([0-9]{13})$')]],
+      isbn10: ['', [Validators.required, Validators.pattern('^([0-9]{10})$')]],
+      image: ['', [Validators.required]],
       subtitle: [''],
-      website: ['']
+      website: [''],
     });
   }
 

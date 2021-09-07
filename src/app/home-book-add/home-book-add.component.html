@@ -10,53 +10,86 @@
             <mat-form-field appearance="outline" class="w-200">
               <mat-label>Title</mat-label>
               <input matInput required formControlName="title" />
-              <mat-error *ngIf="f.required">
-                Το πεδίο είναι υποχρεωτικο
+              <mat-error *ngIf="f.title.hasError('required')">
+                This field is mandatory
+              </mat-error>
+              <mat-error
+                *ngIf="
+                  f.title.hasError('minlength') || f.title.hasError('maxlength')
+                "
+              >
+                Between 10 and 120 characters
               </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="w-200">
               <mat-label>Description</mat-label>
               <input matInput required formControlName="description" />
-              <mat-error *ngIf="f.required">
-                Το πεδίο είναι υποχρεωτικο
+              <mat-error *ngIf="f.description.hasError('required')">
+                This field is mandatory
               </mat-error>
+              <mat-error *ngIf="f.description.hasError('maxlength')"
+                >Less than 512 characters</mat-error
+              >
+              <mat-error *ngIf="f.description.hasError('pattern')"
+                >First letter must be Uppercase</mat-error
+              >
             </mat-form-field>
             <mat-form-field appearance="outline" class="w-200">
               <mat-label>Categories</mat-label>
               <input matInput required formControlName="categories" />
-              <mat-error *ngIf="f.required">
-                Το πεδίο είναι υποχρεωτικο
+              <mat-error *ngIf="f.categories.hasError('required')">
+                This field is mandatory
               </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="w-200">
               <mat-label>Author Name</mat-label>
               <input matInput required formControlName="author" />
-              <mat-error *ngIf="f.required">
-                Το πεδίο είναι υποχρεωτικο
+              <mat-error *ngIf="f.author.hasError('required')">
+                This field is mandatory
               </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="w-200">
               <mat-label>Page Numbers</mat-label>
-              <input type="number" matInput required formControlName="pages" />
-              <mat-error *ngIf="f.required">
-                Το πεδίο είναι υποχρεωτικο
+              <input
+                type="number"
+                matInput
+                required
+                formControlName="pages"
+                max="9999"
+              />
+              <mat-error *ngIf="f.pages.hasError('required')">
+                This field is mandatory
               </mat-error>
+              <mat-error *ngIf="f.pages.hasError('max')"
+                >Should be less than 9999</mat-error
+              >
             </mat-form-field>
           </div>
           <div class="info">
             <mat-form-field appearance="outline" class="w-200">
               <mat-label>Publisher</mat-label>
               <input matInput required formControlName="publisher" />
-              <mat-error *ngIf="f.required">
-                Το πεδίο είναι υποχρεωτικο
+              <mat-error *ngIf="f.publisher.hasError('required')">
+                This field is mandatory
+              </mat-error>
+              <mat-error
+                *ngIf="
+                  f.publisher.hasError('minlength') ||
+                  f.publisher.hasError('maxlength')
+                "
+              >
+                Between 5 and 60 characters
               </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="w-200">
               <mat-label>Year</mat-label>
               <input matInput required formControlName="published" />
-              <mat-error *ngIf="f.required">
-                Το πεδίο είναι υποχρεωτικο
+              <mat-error *ngIf="f.published.hasError('required')">
+                This field is mandatory
               </mat-error>
+              <mat-error *ngIf="f.published.hasError('pattern')"
+                >4 Digits</mat-error
+              >
             </mat-form-field>
             <mat-form-field appearance="outline" class="w-200">
               <mat-label>Rating</mat-label>
@@ -67,23 +100,26 @@
                 <mat-option [value]="4">4/5</mat-option>
                 <mat-option [value]="5">5/5</mat-option>
               </mat-select>
-              <mat-error *ngIf="f.required">
-                Το πεδίο είναι υποχρεωτικο
-              </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="w-200">
               <mat-label>ISBN-10</mat-label>
               <input matInput required formControlName="isbn10" />
-              <mat-error *ngIf="f.required">
-                Το πεδίο είναι υποχρεωτικο
+              <mat-error *ngIf="f.isbn10.hasError('required')">
+                This field is mandatory
               </mat-error>
+              <mat-error *ngIf="f.isbn10.hasError('pattern')"
+                >10 Digits</mat-error
+              >
             </mat-form-field>
             <mat-form-field appearance="outline" class="w-200">
               <mat-label>ISBN-13</mat-label>
               <input matInput required formControlName="isbn" />
-              <mat-error *ngIf="f.required">
-                Το πεδίο είναι υποχρεωτικο
+              <mat-error *ngIf="f.isbn.hasError('required')">
+                This field is mandatory
               </mat-error>
+              <mat-error *ngIf="f.isbn.hasError('pattern')"
+                >13 Digits</mat-error
+              >
             </mat-form-field>
           </div>
         </div>
@@ -96,13 +132,20 @@
               <mat-label>Image URL</mat-label>
               <input matInput required formControlName="image" />
               <mat-error *ngIf="f.required">
-                Το πεδίο είναι υποχρεωτικο
+                This field is mandatory
               </mat-error>
             </mat-form-field>
           </div>
         </div>
         <div>
-            <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            class="save-btn"
+          >
+            Save
+          </button>
         </div>
       </form>
     </mat-card>
