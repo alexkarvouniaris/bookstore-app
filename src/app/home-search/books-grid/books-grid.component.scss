@@ -10,6 +10,10 @@
     height: 200px;
 }
 
+.img:hover {
+    cursor: pointer;
+}
+
 .card {
     margin: 0 10px 20px 10px;
     width: 145px;
@@ -22,6 +26,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.link:hover {
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-decoration-thickness: 20%;
 }
 
 .card-content {

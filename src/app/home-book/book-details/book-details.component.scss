@@ -1,0 +1,50 @@
+.detail-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0 40px 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+}
+
+.basic {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.img {
+    height: 330px;
+    width: 200px;
+    margin: auto 40px auto 40px;
+}
+
+.card {
+    border-radius: 0px;
+    width: 100%;
+}
+
+h1 {
+    margin: 0px!important;
+}
+
+.buy-btn {
+    width: 250px;
+    margin-left: 20px;
+}

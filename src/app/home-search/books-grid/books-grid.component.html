@@ -1,10 +1,10 @@
 <div class="grid pt-2">
     <div *ngFor="let book of books">
-        <mat-card class="card">
-            <img class="img" mat-card-image src={{book.image}}>
+        <mat-card class="card" tabindex="0">
+            <img [routerLink]="[book.isbn]" class="img" mat-card-image src={{book.image}} routerLinkActive="active">
             <mat-card-content class="card-content">
                 <div class="text">
-                    <strong>{{book.title}}</strong>
+                    <strong class="link" [routerLink]="[book.isbn]" routerLinkActive="active">{{book.title}}</strong>
                 </div>
                 <mat-divider [inset]="true"></mat-divider>
                 <div>

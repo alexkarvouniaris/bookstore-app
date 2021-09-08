@@ -17,6 +17,12 @@ const routes: Routes = [
         (m) => m.HomeBookAddModule
       ),
   },
+  {
+    path: 'home/search/:isbn',
+    data: { preload: true },
+    loadChildren: () =>
+      import('./home-book/home-book.module').then((m) => m.HomeBookModule),
+  },
 ];
 
 @NgModule({

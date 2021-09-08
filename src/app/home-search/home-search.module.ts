@@ -7,7 +7,7 @@ import { RatingModule } from '../shared/rating/rating.module';
 import { FilterModule } from '../shared/filter/filter.module';
 
 @NgModule({
-  declarations: [HomeSearchRoutingModule.components, BooksGridComponent],
+  declarations: [HomeSearchRoutingModule.components],
   imports: [SharedModule, HomeSearchRoutingModule, CommonModule, RatingModule, FilterModule],
 })
 export class HomeSearchModule {}

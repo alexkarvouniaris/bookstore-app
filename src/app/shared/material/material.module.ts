@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [],
@@ -24,7 +25,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatDividerModule,
     MatSnackBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatChipsModule
   ],
 })
 export class MaterialModule {}
