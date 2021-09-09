@@ -36,7 +36,24 @@
             </mat-form-field>
             <mat-form-field appearance="outline" class="w-200">
               <mat-label>Categories</mat-label>
-              <input matInput required formControlName="categories" />
+              <mat-chip-list #chipList selection>
+                <mat-chip
+                  *ngFor="let chip of categoryChips"
+                  removable
+                  (removed)="remove(chip)"
+                >
+                  {{ chip }}
+                  <mat-icon matChipRemove>cancel</mat-icon>
+                </mat-chip>
+                <input
+                  placeholder="Type category.."
+                  #categoryInput
+                  [matChipInputFor]="chipList"
+                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                  (matChipInputTokenEnd)="add($event)"
+                  [value]="categoryChips"
+                />
+              </mat-chip-list>
               <mat-error *ngIf="f.categories.hasError('required')">
                 This field is mandatory
               </mat-error>

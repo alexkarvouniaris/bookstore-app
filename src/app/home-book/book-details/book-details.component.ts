@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DataService } from 'src/app/core/services/data.service';
 import { IBook } from 'src/app/shared/interfaces';
@@ -9,8 +9,7 @@ import { IBook } from 'src/app/shared/interfaces';
   styleUrls: ['./book-details.component.scss'],
 })
 export class BookDetailsComponent implements OnInit {
-  book!: IBook;
-  categories!: string[];
+  @Input() book!: IBook;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,15 +17,7 @@ export class BookDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      const isbn = params['isbn'];
-      if(isbn){
-        this.dataService.getBook(isbn).subscribe((book: IBook) => {
-          this.book = book;
-          this.categories = book.categories;
-        })
-      }
-    });
+
   }
 
   

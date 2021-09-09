@@ -1,5 +1,5 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
-import { EMPTY, Observable, of, throwError } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { IBook } from 'src/app/shared/interfaces';
 
 @Injectable({
@@ -20,8 +20,15 @@ export class DataService {
 
   getBook(isbn: string): Observable<IBook> {
     const book = books.find((b) => b.isbn == isbn);
-    console.log('Returned book', book);
     return book ? of(book) : throwError('No book found');
+  }
+
+  getRelatedBooks(categories: string[], isbn: string) {
+    categories.forEach((value) => {
+      var relatedBooks = books.filter((b) => b.categories.includes(value) && b.isbn !== isbn);
+      console.log('RElated books: ', relatedBooks);
+      return of(relatedBooks);
+    });
   }
 }
 

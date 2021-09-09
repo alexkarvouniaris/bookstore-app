@@ -2,7 +2,9 @@
   <mat-card class="card">
     <div class="wrapper">
       <div class="pt-2">
-        <img class="img" mat-card-image src="{{ book.image }}" />
+        <mat-card class="img-container">
+          <img class="img" src="{{ book.image }}" />
+        </mat-card>
       </div>
       <div class="basic">
         <h1 class="pt-2">{{ book.title }}</h1>
@@ -23,19 +25,17 @@
           <h4>{{ book.publisher }}</h4>
         </div>
         <div class="row">
-          <mat-chip-list class="pr-1" *ngFor="let category of categories">
+          <mat-chip-list class="pr-1" *ngFor="let category of book.categories">
             <mat-chip>{{ category }}</mat-chip>
           </mat-chip-list>
         </div>
         <div class="row pt-2">
           <mat-icon class="pr-1">today</mat-icon>
-          <h4>{{ book.published }}</h4>
-        </div>
-        <div class="row">
+          <h4 class="pr-1">{{ book.published | toYear }}</h4>
           <mat-icon class="pr-1">menu_book</mat-icon>
           <h4>{{ book.pages }}</h4>
         </div>
-        <h4>ISBN-10: {{ book.isbn10 }}</h4>
+        <h4 class="m-0">ISBN-10: {{ book.isbn10 || '-'}}</h4>
         <h4>ISBN-13: {{ book.isbn }}</h4>
         <app-rating class="pl-1" [rating]="book.rating"></app-rating>
       </div>
