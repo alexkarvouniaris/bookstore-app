@@ -1,1 +1,32 @@
-<p>books-also-like works!</p>
+<div *ngIf="relatedBooks">
+  <div class="related-content">
+    <h1>You may also like</h1>
+  </div>
+  <div class="also-like-content">
+    <div *ngFor="let book of relatedBooks">
+      <mat-card class="card" tabindex="0">
+        <img
+          [routerLink]="['/home/search/' + book.isbn]"
+          class="img"
+          mat-card-image
+          src="{{ book.image }}"
+          routerLinkActive="active"
+        />
+        <mat-card-content class="card-content">
+          <div class="text">
+            <strong
+              class="link"
+              [routerLink]="[book.isbn]"
+              routerLinkActive="active"
+              >{{ book.title }}</strong
+            >
+          </div>
+          <mat-divider [inset]="true"></mat-divider>
+          <div>
+            <app-rating [rating]="book.rating"></app-rating>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

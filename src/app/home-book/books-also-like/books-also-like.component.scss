@@ -1,0 +1,47 @@
+.related-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.also-like-content {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+.img {
+  height: 200px;
+}
+
+.img:hover {
+  cursor: pointer;
+}
+
+.card {
+  margin: 0 10px 20px 10px;
+  width: 145px;
+  height: 300px;
+}
+
+.text {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.link:hover {
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-thickness: 20%;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
