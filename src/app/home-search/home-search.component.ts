@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { DataService } from '../core/services/data.service';
 import { FilterService } from '../core/services/filter.service';
+import { SorterService } from '../core/services/sorter.service';
 import { IBook } from '../shared/interfaces';
 
 @Component({
@@ -15,7 +15,8 @@ export class HomeSearchComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private filterService: FilterService
+    private filterService: FilterService,
+    private sorterService: SorterService
   ) {}
 
   ngOnInit(): void {
@@ -41,5 +42,9 @@ export class HomeSearchComponent implements OnInit {
     } else {
       this.filteredBooks = this.books;
     }
+  }
+
+  sort(prop: string) {
+    this.filteredBooks = this.sorterService.sort(this.filteredBooks, prop);
   }
 }

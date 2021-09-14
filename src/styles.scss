@@ -3,7 +3,7 @@
 @include mat.core();
 
 $bookstore-primary: mat.define-palette(mat.$orange-palette, 500);
-$bookstore-accent: mat.define-palette(mat.$grey-palette, A200, A100, A400);
+$bookstore-accent: mat.define-palette(mat.$deep-purple-palette, 500);
 
 $bookstore-warn: mat.define-palette(mat.$red-palette);
 

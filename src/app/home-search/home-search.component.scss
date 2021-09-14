@@ -8,3 +8,12 @@
 .text {
     text-align: center;
 }
+
+.sort-button {
+    display: flex;
+    flex-direction: row;
+}
+
+.divider {
+    margin: 0 10px 0 10px!important;
+}

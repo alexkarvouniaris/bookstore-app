@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { IBook } from 'src/app/shared/interfaces';
 
 @Component({

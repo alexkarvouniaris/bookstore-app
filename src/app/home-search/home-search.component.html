@@ -8,6 +8,11 @@
     <div>
         <app-filter (changed)="filterChanged($event)"></app-filter>
     </div>
+    <div class="sort-button">
+        <button (click)="sort('alpha')" mat-icon-button><mat-icon>sort_by_alpha</mat-icon></button>
+        <mat-divider class="divider" vertical inset></mat-divider>
+        <button (click)="sort('rating')" mat-icon-button><mat-icon>trending_up</mat-icon></button>
+    </div>
     <div>
         <app-books-grid [books]="filteredBooks"></app-books-grid>
     </div>
